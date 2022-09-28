@@ -1,0 +1,63 @@
+Admin
+create table admin 
+(
+
+ausername varchar(25),
+apassword varchar(25)
+
+);
+
+
+=============================================================================
+
+
+Tender
+create table tender
+(
+tid int primary key auto_increment,
+ttile varchar(100) not null,
+tdesc varchar(25) not null,
+ttype varchar(20),
+s_date date,
+e_date date,
+tprice int
+);
+
+=============================================================================
+
+
+
+Vender
+create table vender
+(
+vid int primary key,
+vname varchar(20),
+vtype varchar(25),
+vprice int,
+vdate date,
+vusername varchar(25),
+vpassword varchar(25)
+);
+
+
+
+=============================================================================
+
+
+Combine
+
+create table TV
+(
+tid int,
+vid int,
+foreign key(vid) references vender(vid),
+foreign key(tid) references tender(tid)
+);
+
+
+
+
+
+
+
+
